@@ -1,0 +1,12 @@
+body {
+    display: block;
+    margin: 8px;
+}
+
+/* Dark Theme Stuff */
+body.darkTheme {background-color: #18181b;}
+body.darkTheme button { border: none; background: none; color: white; border-bottom-color: #0038FF; border-bottom-width: 2px; border-bottom-style: solid;}
+body.darkTheme input { border: none; background: none; color: white; border-bottom-color: #0038FF; border-bottom-width: 2px; border-bottom-style: solid;}
+body.darkTheme input, body.darkTheme select, body.darkTheme textarea, body.darkTheme button{font-family:inherit;}
+body.darkTheme p, body.darkTheme label, body.darkTheme h1, body.darkTheme h2 {color: white;}
+body.darkTheme select {border-color: #0038FF; border-radius: 5px; color: white; background: #18181b;}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <script type="text/javascript" src="jquery.js"></script>
+    <title>Cobalto</title>
+</head>
+<body style="font-family: 'Montserrat', sans-serif;" class="darkTheme">
+    <div id="urlvalid">
+        <div id="title" style="display: flex;margin-left: auto;margin-right: auto;width: 205px;">
+            <img src="icons/cobaltoText.png" alt="" style="height: 50px;float: left;">
+        </div>
+        <br>
+        <hr>
+        <div id="videoInfo">
+            <div style="display: flex;">
+                <img src="" alt="" id="mediaThumbnail" style="max-height: 100px; max-width: 200px; float: left; margin: 20px;">
+                <div style="float: right; margin-left: 10px;">
+                    <h1 id="mediaTitle"></h1>
+                    <h2 id="mediaAuthor"></h2>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div id="options">
+            <input type="checkbox" id="isAudioOnlyCheckbox"> <label>Download only audio</label>
+            <input type="checkbox" id="isAudioMutedCheckbox" style="margin-left: 20px;"> <label>Download without audio</label>
+            <div id="vQuality">
+                <h2 style="margin-bottom:10px;">Video Quality:</h2>
+                <input type="radio" id="max" name="vQuality" value="max" style="margin-left: 20px;">
+                <label for="max">Max</label>
+                <input type="radio" id="2160" name="vQuality" value="2160">
+                <label for="2160">2160p</label>
+                <input type="radio" id="1440" name="vQuality" value="1440">
+                <label for="1440">1440p</label>
+                <input type="radio" id="1080" name="vQuality" value="1080" checked>
+                <label for="1080">1080p</label>
+                <input type="radio" id="720" name="vQuality" value="720">
+                <label for="720">720p</label>
+                <input type="radio" id="480" name="vQuality" value="480">
+                <label for="480">480p</label>
+                <input type="radio" id="360" name="vQuality" value="360">
+                <label for="360">360p</label>
+                <!-- <input type="radio" id="144" name="vQuality" value="144">
+                <label for="144">144p</label> -->
+            </div>
+            <div id="aFormat">
+                <h2 style="margin-bottom:10px;">Audio Format:</h2>
+                <input type="radio" id="best" name="aFormat" value="best" style="margin-left: 20px;">
+                <label for="best">Best</label>
+                <input type="radio" id="mp3" name="aFormat" value="mp3" checked>
+                <label for="mp3">mp3</label>
+                <input type="radio" id="ogg" name="aFormat" value="ogg">
+                <label for="ogg">ogg</label>
+                <input type="radio" id="wav" name="aFormat" value="wav">
+                <label for="wav">wav</label>
+                <input type="radio" id="opus" name="aFormat" value="opus">
+                <label for="opus">opus</label>
+            </div>
+            <div id="ttOptions" style="display: none">
+            <br>
+                <input type="checkbox" id="isNoTTWatermarkCheckbox"> <label>Download TikTok with Watermark</label>
+                <input type="checkbox" id="isTTFullAudioCheckbox" style="margin-left: 20px;"> <label>Download TikTok with original audio</label>
+            </div>
+            <hr>
+            <button style="font-size: large;margin-top: 10px;" id="downloadButton">Download Video</button>
+        </div>
+    </div>
+    <script type="text/javascript" src="downloadScript.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+{
+  "name": "Cobalto",
+  "version": "0.0.0",
+  "manifest_version": 3,
+  "author": "Darye",
+  "description": "Download audio and video from the Internet easily from your Browser! Powered with Cobalt by Wukko, made by Darye.",
+  "homepage_url": "https://cobalto.darye.dev",
+  "icons": {
+    "16": "icons/cobaltoIcon16.png",
+    "48": "icons/cobaltoIcon48.png",
+    "128": "icons/cobaltoIcon128.png"
+  },
+  "action": {
+    "default_icon": "icons/cobaltoIcon128.png",
+    "default_title": "Cobalto",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "scripting",
+    "storage"
+  ],
+  "content_security_policy": {
+    "default-src": "self",
+    "script-src": "self"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "run_at": "document_start",
+      "matches": [
+        "https://www.youtube.com/*"
+      ],
+      "js": [
+        "jquery.js",
+        "youtubeScript.js"
+      ],
+      "css": []
+    }
+  ]
+}
