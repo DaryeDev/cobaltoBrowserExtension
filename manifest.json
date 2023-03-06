@@ -32,7 +32,7 @@
     {
       "run_at": "document_start",
       "matches": [
-        "https://www.youtube.com/*"
+        "https://*.youtube.com/*"
       ],
       "js": [
         "jquery.js",
