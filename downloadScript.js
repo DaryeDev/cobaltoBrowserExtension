@@ -26,11 +26,12 @@ function submit() {
         redirect: 'follow'
     };
 
-    fetch("https://daryecobalt.fly.dev/api/json", requestOptions)
+    fetch("https://co.wuk.sh/api/json", requestOptions)
         .then((response) => response.json())
         .then((data) => {
             if ("url" in data){
                 chrome.tabs.create({ url: data.url });
+                window.close()
             }
         })
         .catch(error => console.log('error', error));
@@ -47,7 +48,7 @@ function getYoutubeInfo(video_url){
             redirect: 'follow'
         };
         var data = {};
-        return fetch("https://daryecobalt.fly.dev/api/getVideoInfo?url="+encodeURIComponent(video_url), requestOptions)
+        return fetch("https://co.wuk.sh/api/getVideoInfo?url="+encodeURIComponent(video_url), requestOptions)
             .then(response => response.json())
             .then(result => {return (result.data.items[0])})
             .catch(error => console.log('error', error));
@@ -77,11 +78,13 @@ try {
     switch (new URL(url).host) {
         case "www.youtube.com":
             console.log("youtube")
-            var info = getYoutubeInfo(url).then((info) => {
-                document.getElementById("mediaThumbnail").src = info.snippet.thumbnails.medium.url
-                document.getElementById("mediaTitle").innerText = info.snippet.title
-                document.getElementById("mediaAuthor").innerText = info.snippet.channelTitle
-            });
+            fetch(`https://noembed.com/embed?dataType=json&url=${url}`)
+                .then(res => res.json())
+                .then((data) => {
+                    document.getElementById("mediaTitle").innerText = data.title
+                    document.getElementById("mediaAuthor").innerText = data.author_name
+                    document.getElementById("mediaThumbnail").src = data.thumbnail_url
+                });
             break;
     
         case "www.tiktok.com":
